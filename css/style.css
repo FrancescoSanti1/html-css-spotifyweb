@@ -92,37 +92,48 @@ footer {
     padding: 0 10px;
 }
 
+/* centralizzazione CSS per barra avanzamento e volume */
+
+.barra {
+    height: 3px;
+    background-color: grey;
+    border-radius: 3px;
+}
+
+.avanzamento {
+    background-color: white;
+}
 
 /* Parte sinistra del player */
 
-footer .player.sx {
+.player.sx {
     display: flex;
     align-items: center;
 }
 
-footer .player.sx #brano-in-riproduzione {
+.player.sx #brano-in-riproduzione {
     display: flex;
     align-items: center;
 }
 
-footer .player.sx img {
+.player.sx img {
     max-height: 50px;
 }
 
-footer .player.sx #info-brano {
+.player.sx #info-brano {
     margin: 0 10px;
 }
 
-footer .player.sx #info-brano div:first-child {
+.player.sx #info-brano div:first-child {
     font-weight: 700;
     color: white;
 }
 
-footer .player.sx #info-brano div:nth-child(2) {
+.player.sx #info-brano div:nth-child(2) {
     font-size: 0.7rem;
 }
 
-footer .player.sx i {
+.player.sx i {
     margin: 0 5px;
 }
 
@@ -147,27 +158,20 @@ footer .player.sx i {
     margin: 0 15px;
 }
 
-.player.cx #barra {
+.player.cx #stato-riproduzione {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 0.7rem;
 }
 
-.player.cx #barra div:nth-child(2) {
+.player.cx #stato-riproduzione .barra.brano {
     width: 50%;
-    height: 3px;
-    background-color: grey;
     margin: 0 20px;
-    border-radius: 3px;
 }
 
-/* selezione per mostrare l'avanzamento del brano in esecuzione nella barra centrale */
-.player.cx #barra div:nth-child(2) > div {
+.player.cx #stato-riproduzione .barra.avanzamento {
     width: 20%;
-    height: 3px;
-    background-color: white;
-    border-radius: 3px;
 }
 
 
@@ -182,17 +186,51 @@ footer .player.sx i {
     margin: 0 10px;
 }
 
-.player.dx #barra-volume {
+.player.dx .barra.volume {
     width: 100px;
-    height: 3px;
-    background-color: grey;
-    border-radius: 3px;
     margin-left: 10px;
 }
 
-.player.dx #barra-volume div {
+.player.dx .barra.avanzamento {
     width: 20%;
-    height: 3px;
-    background-color: white;
-    border-radius: 3px;
+}
+
+
+/* FOOTER per schermo SMALL */
+
+@media screen and (max-width: 568px) {
+
+    .player.sx img {
+        max-height: 40px;
+    }
+
+    .player.cx #btn-riproduzione i:nth-child(3) {
+        margin: 0 10px;
+    }
+
+    .player.cx #stato-riproduzione .barra.brano {
+        margin: 0 10px;
+    }
+
+    .player.dx i {
+        margin: 0 5px;
+    }
+
+    .player.dx .barra.volume {
+        margin-left: 5px;
+    }
+    
+}
+
+/* FOOTER per schermo EXTRA-SMALL */
+
+@media screen and (max-width: 420px) {
+    
+    .player.sx img {
+        display: none;
+    }
+
+    .player.sx #info-brano {
+        margin-left: 0;
+    }
 }
