@@ -10,6 +10,8 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    color: grey;
+    font-size: 14px;
 }
 
 #contenitore {
@@ -87,18 +89,110 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 10px;
 }
 
-footer .player {
 
-    /* debug */
-    height: 40px;
+/* Parte sinistra del player */
+
+footer .player.sx {
+    display: flex;
+    align-items: center;
+}
+
+footer .player.sx #brano-in-riproduzione {
+    display: flex;
+    align-items: center;
+}
+
+footer .player.sx img {
+    max-height: 50px;
+}
+
+footer .player.sx #info-brano {
+    margin: 0 10px;
+}
+
+footer .player.sx #info-brano div:first-child {
+    font-weight: 700;
+    color: white;
+}
+
+footer .player.sx #info-brano div:nth-child(2) {
+    font-size: 0.7rem;
+}
+
+footer .player.sx i {
+    margin: 0 5px;
+}
+
+
+/* Parte centrale del player */
+
+.player.cx {
+    color: white;
+    width: 50%;
+}
+
+.player.cx #btn-riproduzione {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.player.cx #btn-riproduzione i {
+    margin: 0 5px;
+}
+
+.player.cx #btn-riproduzione i:nth-child(3) {
+    margin: 0 15px;
+}
+
+.player.cx #barra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+}
+
+.player.cx #barra div:nth-child(2) {
+    width: 50%;
+    height: 3px;
+    background-color: grey;
+    margin: 0 20px;
+    border-radius: 3px;
+}
+
+/* selezione per mostrare l'avanzamento del brano in esecuzione nella barra centrale */
+.player.cx #barra div:nth-child(2) > div {
+    width: 20%;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+
+/* Parte destra del player */
+
+.player.dx {
+    display: flex;
+    align-items: center;
+}
+
+.player.dx i {
+    margin: 0 10px;
+}
+
+.player.dx #barra-volume {
     width: 100px;
-    background-color: lightblue;
+    height: 3px;
+    background-color: grey;
+    border-radius: 3px;
+    margin-left: 10px;
 }
 
-footer .player.cx {
-
-    /* debug */
-    width: 300px;
+.player.dx #barra-volume div {
+    width: 20%;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
 }
