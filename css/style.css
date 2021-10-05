@@ -11,13 +11,18 @@
 body {
     font-family: 'Montserrat', sans-serif;
     color: grey;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 #contenitore {
     height: calc(100vh - 100px);
     display: flex;
 }
+
+ul {
+    list-style-type: none;
+}
+
 
 /* CSS relativo all'aside con gli elementi di navigazione */
 
@@ -40,21 +45,57 @@ aside #logo img {
     max-width: 70%;
 }
 
+/* ASIDE parte di navigazione */
+
 aside nav {
     width: 100%;
+    margin-bottom: 20px;
 
     /* debug */
-    height: 100px;
     background-color: lightblue;
 }
+
+aside nav ul li {
+    margin-bottom: 5px;
+}
+
+aside nav ul li img {
+    height: 30px;
+    vertical-align: middle;
+    filter: invert(0.4);
+}
+
+
+/* ASIDE elenco playlist */
 
 aside #playlist {
     width: 100%;
     
     /* debug */
-    height: 200px;
     background-color: lightcoral;
 }
+
+aside #playlist h3 {
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 5px;
+}
+
+aside #playlist i {
+    font-size: 2rem;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+aside #playlist span {
+    font-size: 1.05rem;
+    vertical-align: middle;
+}
+
+aside #playlist ul li {
+    margin-top: 10px;
+}
+
 
 aside #account {
     width: 100px;
@@ -75,9 +116,25 @@ main {
     background-color: #141922;
 }
 
+/* parte alta con barra trasparente e bottone */
+
 main header {
     height: 100px;
+    line-height: 100px;
     background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: right;
+}
+
+.btn {
+    border: white 1px solid;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-right: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
 }
 
 
