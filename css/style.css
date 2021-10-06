@@ -29,26 +29,28 @@ ul {
 aside {
     width: 250px;
     height: 100%;
+    min-height: 400px;
     background-color: black;
     padding: 20px;
+    padding-bottom: 80px;
     position: relative;
-    /* display: flex;
-    flex-wrap: wrap; */
 }
 
 aside #logo {
     height: 80px;
-    width: 100%;
 }
 
-aside #logo img {
+aside #logo img:first-of-type {
     max-width: 70%;
+}
+
+aside #logo img:nth-of-type(2) {
+    display: none;
 }
 
 /* ASIDE parte di navigazione */
 
 aside nav {
-    width: 100%;
     margin-bottom: 20px;
 
     /* debug */
@@ -65,11 +67,20 @@ aside nav ul li img {
     filter: invert(0.4);
 }
 
+/* soluzione FLEX per posizionare #account sempre in fondo all'aside */
+
+/* .flex {
+    display: flex;
+    align-items: stretch;
+    align-content: stretch;
+    flex-wrap: wrap;
+    height: 100%;
+} */
 
 /* ASIDE elenco playlist */
 
 aside #playlist {
-    width: 100%;
+    max-height: 100%;
     
     /* debug */
     background-color: lightcoral;
@@ -92,18 +103,104 @@ aside #playlist span {
     vertical-align: middle;
 }
 
+aside #playlist .overflow {
+    overflow-y: auto;
+}
+
 aside #playlist ul li {
     margin-top: 10px;
 }
 
 
+/* ASIDE sezione account */
+
 aside #account {
-    width: 100px;
     position: absolute;
     bottom: 10px;
+    width: 210px;
+    
     /* debug */
-    height: 50px;
     background-color: lightgreen;
+}
+
+aside #account img {
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+aside #account div:first-of-type {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: grey 1px solid;
+}
+
+aside #account div:first-of-type img {
+    filter: invert(0.4);
+}
+
+aside #account div:nth-of-type(2) img {
+    background-color: grey;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+aside #account div:nth-of-type(2) span {
+    color: white;
+    font-weight: 700;
+}
+
+
+/* ASIDE per schermo EXTRA-SMALL */
+
+@media screen and (max-width: 568px) {
+
+    aside {
+        width: 55px;
+        padding: 10px;
+    }
+
+    aside #logo {
+        height: 40px;
+    }
+    
+    aside #logo img:first-of-type {
+        display: none;
+    }
+    
+    aside #logo img:nth-of-type(2) {
+        display: block;
+        height: 30px;
+    }
+
+    aside nav ul li span {
+        display: none;
+    }
+
+    aside #playlist {
+        display: none;
+    }
+
+    aside #account {
+        width: auto;
+    }
+
+    aside #account div {
+        text-align: center;
+    }
+
+    aside #account div:first-of-type {
+        border: none;
+    }
+
+    aside #account div span {
+        display: none;
+    }
+
+    aside #account img {
+        margin-right: 0;
+    }
 }
 
 
@@ -130,13 +227,21 @@ main header {
     border: white 1px solid;
     border-radius: 20px;
     padding: 10px 30px;
-    margin-right: 5px;
+    margin-right: 10px;
     text-transform: uppercase;
     text-decoration: none;
     color: white;
     font-weight: 700;
 }
 
+/* MAIN per schermo EXTRA-SMALL */
+
+@media screen and (max-width: 568px) {
+    
+    main {
+        width: calc(100% - 55px);
+    }
+}
 
 /* CSS relativo al footer che rappresenta il player che sta sempre in basso */
 
@@ -253,7 +358,7 @@ footer {
 }
 
 
-/* FOOTER per schermo SMALL */
+/* FOOTER per schermo EXTRA-SMALL */
 
 @media screen and (max-width: 568px) {
 
@@ -277,17 +382,4 @@ footer {
         margin-left: 5px;
     }
     
-}
-
-/* FOOTER per schermo EXTRA-SMALL */
-
-@media screen and (max-width: 420px) {
-    
-    .player.sx img {
-        display: none;
-    }
-
-    .player.sx #info-brano {
-        margin-left: 0;
-    }
 }
