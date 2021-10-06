@@ -23,6 +23,16 @@ ul {
     list-style-type: none;
 }
 
+a {
+    text-decoration: none;
+    color: grey;
+    transition: all 0.3s;
+}
+
+a:hover {
+    color: white;
+}
+
 
 /* CSS relativo all'aside con gli elementi di navigazione */
 
@@ -216,7 +226,6 @@ main {
 /* parte alta con barra trasparente e bottone */
 
 main header {
-    width: calc(100% - 250px);
     height: 100px;
     line-height: 100px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -225,6 +234,7 @@ main header {
     position: fixed;
     top: 0;
     right: 0;
+    left: 250px;
     z-index: 1;
 }
 
@@ -246,6 +256,24 @@ main header {
     overflow-y: auto;
 }
 
+#contenuti nav {
+    margin-bottom: 30px;
+}
+
+#contenuti nav ul {
+    text-align: center;
+}
+
+#contenuti nav ul li {
+    display: inline-block;
+    margin: 0 10px 10px;
+}
+
+#contenuti nav ul li a {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
 #contenuti h2, #contenuti h3 {
     color: white;
 }
@@ -257,29 +285,43 @@ main header {
 
 .flex {
     display: flex;
-    justify-content: space-between;
     margin: 10px 0 30px;
 }
 
 .flex-item {
     width: 15%;
     text-align: center;
+    margin: 0 2% 10px 0;
 }
 
 .flex-item img {
     width: 100%;
 }
 
-.suggerimenti.flex, .popolari.flex {
-    justify-content: flex-start;
-}
-
-.suggerimenti .flex-item, .popolari .flex-item {
-    margin-right: 2%;
-}
-
 .popolari img {
     border-radius: 50%;
+}
+
+/* MAIN per schermo MEDIUM */
+
+@media screen and (max-width: 1024px) {
+
+    .flex {
+        flex-wrap: wrap;
+    }
+
+    .flex-item {
+        width: 22%;
+    }
+}
+
+/* MAIN per schermo SMALL */
+
+@media screen and (max-width: 768px) {
+
+    .flex-item {
+        width: 45%;
+    }
 }
 
 /* MAIN per schermo EXTRA-SMALL */
@@ -288,6 +330,10 @@ main header {
 
     main {
         width: calc(100% - 55px);
+    }
+
+    main header {
+        left: 55px;
     }
 }
 
