@@ -394,13 +394,37 @@ footer {
 /* centralizzazione CSS per barra avanzamento e volume */
 
 .barra {
-    height: 3px;
+    height: 4px;
     background-color: grey;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 .avanzamento {
     background-color: white;
+    position: relative;
+}
+
+.pallino {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    right: -5px;
+    top: -3px;
+    display: none;
+}
+
+.barra:hover {
+    cursor: pointer;
+}
+
+.barra:hover .avanzamento {
+    background-color: yellowgreen;
+}
+
+.barra:hover .pallino {
+    display: block;
 }
 
 /* Parte sinistra del player */
@@ -428,12 +452,22 @@ footer {
     color: white;
 }
 
-.player.sx #info-brano div:nth-child(2) {
+.player.sx #info-brano a {
     font-size: 0.7rem;
+    transition: none;
+}
+
+.player.sx #info-brano a:hover {
+    text-decoration: underline;
 }
 
 .player.sx i {
     margin: 0 5px;
+}
+
+.player.sx i:hover {
+    color: white;
+    cursor: pointer;
 }
 
 
@@ -454,9 +488,17 @@ footer {
     vertical-align: middle;
 }
 
+.player.cx #btn-riproduzione i:hover {
+    cursor: pointer;
+}
+
 .player.cx #btn-riproduzione i:nth-child(3) {
     margin: 0 15px;
     font-size: 1.5rem;
+}
+
+.player.cx #btn-riproduzione .fa-play-circle:hover {
+    transform: scale(1.1);
 }
 
 .player.cx #stato-riproduzione {
@@ -485,6 +527,7 @@ footer {
 
 .player.dx i {
     margin: 0 10px;
+    color: white;
 }
 
 .player.dx .barra.volume {
