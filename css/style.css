@@ -216,11 +216,16 @@ main {
 /* parte alta con barra trasparente e bottone */
 
 main header {
+    width: calc(100% - 250px);
     height: 100px;
     line-height: 100px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     text-align: right;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
 }
 
 .btn {
@@ -234,10 +239,53 @@ main header {
     font-weight: 700;
 }
 
+/* parte bassa con nav e contenuti principali */
+#contenuti {
+    padding: 120px 20px 20px 20px;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+#contenuti h2, #contenuti h3 {
+    color: white;
+}
+
+#contenuti h2 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 30px;
+}
+
+.flex-item {
+    width: 15%;
+    text-align: center;
+}
+
+.flex-item img {
+    width: 100%;
+}
+
+.suggerimenti.flex, .popolari.flex {
+    justify-content: flex-start;
+}
+
+.suggerimenti .flex-item, .popolari .flex-item {
+    margin-right: 2%;
+}
+
+.popolari img {
+    border-radius: 50%;
+}
+
 /* MAIN per schermo EXTRA-SMALL */
 
 @media screen and (max-width: 568px) {
-    
+
     main {
         width: calc(100% - 55px);
     }
