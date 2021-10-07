@@ -43,7 +43,6 @@ aside {
     min-height: 400px;
     background-color: black;
     padding: 20px;
-    overflow-y: hidden;
 }
 
 .flex-aside {
@@ -54,8 +53,7 @@ aside {
 }
 
 .flex-item-aside {
-    /* tentativo fallito di far salire ancora la parte relativa all'account sopra le playlist */
-    flex-shrink: 2;
+    overflow: hidden;
 }
 
 aside #logo {
@@ -269,14 +267,17 @@ main header {
     margin: 0 10px 10px;
 }
 
+#contenuti nav ul li div {
+    background-color: greenyellow;
+    height: 2px;
+    width: 30px;
+    margin: 3px auto 0;
+}
+
 #contenuti nav ul li a {
     text-transform: uppercase;
     font-weight: 700;
     padding: 3px;
-}
-
-#contenuti nav ul li:first-of-type a {
-    border-bottom: greenyellow solid 2px;
 }
 
 #contenuti h2, #contenuti h3 {
