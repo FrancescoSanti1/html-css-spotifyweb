@@ -43,9 +43,19 @@ aside {
     min-height: 400px;
     background-color: black;
     padding: 20px;
-    padding-bottom: 80px;
-    position: relative;
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
+}
+
+.flex-aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.flex-item-aside {
+    /* tentativo fallito di far salire ancora la parte relativa all'account sopra le playlist */
+    flex-shrink: 2;
 }
 
 aside #logo {
@@ -70,6 +80,12 @@ aside nav ul li {
     margin-bottom: 5px;
 }
 
+aside nav ul li:first-of-type {
+    border-left: greenyellow 3px solid;
+    margin-left: -20px;
+    padding-left: 17px;
+}
+
 aside nav ul li img {
     height: 30px;
     vertical-align: middle;
@@ -82,14 +98,6 @@ aside a:hover img {
 }
 
 /* ASIDE elenco playlist */
-
-aside #playlist {
-    /* height: auto; */
-    /* overflow-y: hidden; */
-    
-    /* debug */
-    background-color: lightcoral;
-}
 
 aside #playlist h3 {
     text-transform: uppercase;
@@ -114,18 +122,11 @@ aside #playlist ul {
 }
 
 aside #playlist ul li {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 
 /* ASIDE sezione account */
-
-aside #account {
-    position: absolute;
-    bottom: 10px;
-    width: 210px;
-    /* background-color: black; */
-}
 
 aside #account img {
     height: 20px;
@@ -170,10 +171,6 @@ aside #account div:nth-of-type(2) span {
         padding: 10px;
     }
 
-    /* aside .centratura {
-        margin: 0 auto;
-    } */
-
     aside #logo {
         height: 40px;
     }
@@ -193,10 +190,6 @@ aside #account div:nth-of-type(2) span {
 
     aside #playlist {
         display: none;
-    }
-
-    aside #account {
-        width: auto;
     }
 
     aside #account div {
@@ -258,7 +251,7 @@ main header {
 
 /* parte bassa con nav e contenuti principali */
 #contenuti {
-    padding: 120px 20px 20px 20px;
+    padding: 120px 0 20px 20px;
     max-height: 100%;
     overflow-y: auto;
 }
@@ -279,6 +272,11 @@ main header {
 #contenuti nav ul li a {
     text-transform: uppercase;
     font-weight: 700;
+    padding: 3px;
+}
+
+#contenuti nav ul li:first-of-type a {
+    border-bottom: greenyellow solid 2px;
 }
 
 #contenuti h2, #contenuti h3 {
@@ -300,7 +298,7 @@ main header {
 }
 
 .flex-item {
-    width: 15%;
+    width: calc((100% / 6) - 2%);
     text-align: center;
     margin: 0 2% 10px 0;
 }
@@ -366,7 +364,7 @@ main header {
 @media screen and (max-width: 768px) {
 
     .flex-item {
-        width: 46%;
+        width: 48%;
     }
 }
 
@@ -394,7 +392,7 @@ footer {
     padding: 0 10px;
 }
 
-/* centralizzazione CSS per barra avanzamento e volume */
+/* centralizzazione CSS per barra avanzamento brano e volume */
 
 .barra {
     height: 4px;
