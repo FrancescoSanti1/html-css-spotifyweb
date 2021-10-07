@@ -17,6 +17,7 @@ body {
 #contenitore {
     height: calc(100vh - 100px);
     display: flex;
+    overflow-y: hidden;
 }
 
 ul {
@@ -44,6 +45,7 @@ aside {
     padding: 20px;
     padding-bottom: 80px;
     position: relative;
+    /* overflow-y: hidden; */
 }
 
 aside #logo {
@@ -62,9 +64,6 @@ aside #logo img:nth-of-type(2) {
 
 aside nav {
     margin-bottom: 20px;
-
-    /* debug */
-    background-color: lightblue;
 }
 
 aside nav ul li {
@@ -85,7 +84,8 @@ aside a:hover img {
 /* ASIDE elenco playlist */
 
 aside #playlist {
-    max-height: 100%;
+    /* height: auto; */
+    /* overflow-y: hidden; */
     
     /* debug */
     background-color: lightcoral;
@@ -108,7 +108,8 @@ aside #playlist span {
     vertical-align: middle;
 }
 
-aside #playlist .overflow {
+aside #playlist ul {
+    height: auto;
     overflow-y: auto;
 }
 
@@ -123,9 +124,7 @@ aside #account {
     position: absolute;
     bottom: 10px;
     width: 210px;
-    
-    /* debug */
-    background-color: lightgreen;
+    /* background-color: black; */
 }
 
 aside #account img {
@@ -170,6 +169,10 @@ aside #account div:nth-of-type(2) span {
         width: 55px;
         padding: 10px;
     }
+
+    /* aside .centratura {
+        margin: 0 auto;
+    } */
 
     aside #logo {
         height: 40px;
@@ -284,7 +287,7 @@ main header {
 
 #contenuti h2 {
     font-size: 1.7rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 #contenuti h3 {
@@ -329,7 +332,7 @@ main header {
 }
 
 .flex-item img {
-    width: 100%;
+    max-width: 100%;
     display: block;
 }
 
@@ -354,7 +357,7 @@ main header {
     }
 
     .flex-item {
-        width: 22%;
+        width: 23%;
     }
 }
 
@@ -363,7 +366,7 @@ main header {
 @media screen and (max-width: 768px) {
 
     .flex-item {
-        width: 45%;
+        width: 46%;
     }
 }
 
